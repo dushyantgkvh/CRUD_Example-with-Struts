@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+       "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+       "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+
+		<form-bean name="helloForm"
+			type="com.witty.struts.form.HelloForm">
+		</form-bean>
+
+		<form-bean name="employeeForm"
+			type="com.witty.struts.form.EmployeeForm">
+		</form-bean>
+
+	</form-beans>
+
+	<action-mappings>
+		<action path="/login" name="helloForm"
+			type="com.witty.struts.action.HelloAction" input="/login.jsp">
+			<forward name="success" path="/welcome.jsp" />
+		</action>
+
+		<action path="/listEmployee"
+			type="com.witty.struts.action.ListEmployeeAction">
+			<forward name="success" path="/listEmployee.jsp" />
+		</action>
+
+		<action path="/newEmployee" name="employeeForm"
+			type="com.witty.struts.action.NewEmployeeAction"
+			input="/newEmployee.jsp">
+			<forward name="success" path="/listEmployee.jsp" />
+		</action>
+		
+		<action path="/editEmployee" name="employeeForm"
+			type="com.witty.struts.action.EditEmployeeAction"
+			input="/editEmployee.jsp">
+			<forward name="success" path="/listEmployee.jsp" />
+		</action>
+
+		<action path="/deleteEmployee"
+			type="com.witty.struts.action.DeleteEmployeeAction">
+			<forward name="success" path="/listEmployee.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<message-resources
+		parameter="com.witty.struts.error.ErrorMessage"></message-resources>
+</struts-config>
