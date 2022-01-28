@@ -2,9 +2,17 @@ package com.witty.struts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class StrutsExampleApplication {
+public class StrutsExampleApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(StrutsExampleApplication.class);
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(StrutsExampleApplication.class, args);
 

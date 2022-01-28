@@ -30,7 +30,7 @@ th {
 </style>
 <body>
 
-	<a href="/StrutsExam/newEmployee.jsp"><h2>NEW REGISTER</h2></a>
+	<a href="newEmployee.jsp"><h2>NEW REGISTER</h2></a>
 	<h1 align="center">List of Employees</h1>
 	<table border="1" style="width: 50%" align="center">
 		<tr>
